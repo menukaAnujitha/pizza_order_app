@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_order_app/Models/category_card.dart';
 import 'package:pizza_order_app/Models/pizza_card.dart';
-import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -75,8 +74,8 @@ class _HomePAgeState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: 90,
-                        width: 80,
+                        height: 180,
+                        width: 150,
                         child: Image.asset(
                           'lib/images/pizza.jpg',
                         ),
@@ -86,7 +85,7 @@ class _HomePAgeState extends State<HomePage> {
                               fit: BoxFit.cover),
                         ),
                       ),
-                      const SizedBox(width: 15),
+                      SizedBox(width: 15),
                       Padding(
                         padding: const EdgeInsets.all(5.0),
                         child: Column(
@@ -223,7 +222,6 @@ class _HomePAgeState extends State<HomePage> {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNav(),
     );
   }
 }

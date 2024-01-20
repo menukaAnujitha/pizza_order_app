@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -12,7 +11,9 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNav(),
+      body: SafeArea(
+        child: Text('Cart Page', style: TextStyle(fontSize: 30)),
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pizza_order_app/UI%20pages/cart.dart';
-import 'package:pizza_order_app/UI%20pages/home.dart';
+import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pizza Order App',
       debugShowCheckedModeBanner: false,
-      home: CartPage(),
+      home: BottomNav(),
     );
   }
 }

@@ -41,28 +41,28 @@ class _BottomNavState extends State<BottomNav> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                Icons.home_outlined,
                 size: 30,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.shopping_cart,
+                Icons.shopping_cart_outlined,
                 size: 30,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.note,
+                Icons.event_note_outlined,
                 size: 30,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.star,
+                Icons.star_outline_rounded,
                 size: 30,
               ),
               label: '',
@@ -70,16 +70,10 @@ class _BottomNavState extends State<BottomNav> {
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Color.fromARGB(255, 255, 255, 255),
-          unselectedItemColor: Color.fromARGB(255, 197, 197, 197),
+          unselectedItemColor: Color.fromARGB(255, 159, 159, 159),
           onTap: _onItemTapped,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          //backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-          /*iconSize: 30,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          selectedFontSize: 13.0,
-          unselectedFontSize: 13.0,*/
         ),
       ),
     );

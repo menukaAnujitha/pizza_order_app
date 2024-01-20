@@ -15,59 +15,62 @@ class PizzaCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Container(
-        padding: const EdgeInsets.all(15),
-        width: 150,
-        height: 200,
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 33, 41, 64),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Column(children: [
-          Container(
-            child: Image.asset(
-              pizzaImage,
-              width: 120,
-              height: 120,
+        width: 150.0,
+        height: 250.0,
+        color: Color.fromARGB(255, 33, 41, 64),
+        child: Column(
+          children: [
+            ClipRect(
+              child: Align(
+                alignment: Alignment.topCenter,
+                heightFactor: 0.8,
+                child: Image.asset(
+                  pizzaImage,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            pizzaName,
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 12, color: Colors.white),
-          ),
-          Text(pizzaText,
-              style: TextStyle(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 10,
-                  color: Colors.white)),
-          Row(
-            children: [
-              Icon(
-                Icons.star,
-                size: 15.0,
-                color: Color.fromRGBO(255, 180, 30, 1),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0),
+              child: Text(
+                pizzaName,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.white),
               ),
-              Icon(
-                Icons.star,
-                size: 15.0,
-                color: Color.fromRGBO(255, 180, 30, 1),
-              ),
-              Icon(
-                Icons.star,
-                size: 15.0,
-                color: Color.fromRGBO(255, 180, 30, 1),
-              ),
-              Icon(
-                Icons.star,
-                size: 15.0,
-                color: Color.fromRGBO(255, 180, 30, 1),
-              ),
-            ],
-          ),
-        ]),
+            ),
+            Text(pizzaText,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 10,
+                    color: Colors.white)),
+            Row(
+              children: [
+                Icon(
+                  Icons.star,
+                  size: 15.0,
+                  color: Color.fromRGBO(255, 180, 30, 1),
+                ),
+                Icon(
+                  Icons.star,
+                  size: 15.0,
+                  color: Color.fromRGBO(255, 180, 30, 1),
+                ),
+                Icon(
+                  Icons.star,
+                  size: 15.0,
+                  color: Color.fromRGBO(255, 180, 30, 1),
+                ),
+                Icon(
+                  Icons.star,
+                  size: 15.0,
+                  color: Color.fromRGBO(255, 180, 30, 1),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
