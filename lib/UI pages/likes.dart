@@ -10,6 +10,10 @@ class LikesPage extends StatefulWidget {
 class _LikesPageState extends State<LikesPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: Text('Likes Page', style: TextStyle(fontSize: 30)),
+      ),
+    );
   }
 }

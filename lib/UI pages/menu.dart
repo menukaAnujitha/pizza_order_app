@@ -11,8 +11,9 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Text('Menus Page', style: TextStyle(fontSize: 30)),
-    ));
+      body: SafeArea(
+        child: Text('Menu Page', style: TextStyle(fontSize: 30)),
+      ),
+    );
   }
 }

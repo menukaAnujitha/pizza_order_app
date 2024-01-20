@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_order_app/Models/category_card.dart';
 import 'package:pizza_order_app/Models/pizza_card.dart';
+import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,24 +16,44 @@ class _HomePAgeState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 17, 20, 37),
       body: SafeArea(
+        // Top Row
+
         child: Column(
           children: [
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 22.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [],
+                  Container(
+                    color: Color.fromARGB(255, 33, 41, 64),
+                    child: IconButton(
+                        iconSize: 30,
+                        color: Colors.white,
+                        icon: const Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {}),
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      'lib/images/profile.jpg',
-                      width: 40,
-                      height: 40,
+                  SizedBox(width: 165),
+                  Text(
+                    'Hello, User!',
+                    style: TextStyle(
+                      color: Colors.white,
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image.asset(
+                        'lib/images/profile.jpg',
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                   )
                 ],
@@ -46,45 +67,88 @@ class _HomePAgeState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 33, 41, 64),
                     borderRadius: BorderRadius.circular(12)),
-                child: Row(children: [
-                  Container(
-                    height: 80,
-                    width: 80,
-                  ),
-                  const SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Juicy And Savory Steak',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                          ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 90,
+                        width: 80,
+                        child: Image.asset(
+                          'lib/images/pizza.jpg',
                         ),
-                        const SizedBox(height: 12),
-                        const Text(
-                          'Lorem ipsum dolor',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w300),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("lib/images/pizza.jpg"),
+                              fit: BoxFit.cover),
                         ),
-                        const SizedBox(height: 14),
-                      ],
-                    ),
-                  )
-                ]),
+                      ),
+                      const SizedBox(width: 15),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Juicy And \nSavory Steak',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            const Text(
+                              'Lorem ipsum dolor',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w300),
+                            ),
+                            // const SizedBox(height: 14),
+                            const Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  'only',
+                                  //textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    //fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                  ),
+                                ),
+                                Text(
+                                  '15.',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 47,
+                                  ),
+                                ),
+                                Text(
+                                  '99',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ]),
               ),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 15),
 
             // text
 
@@ -103,7 +167,7 @@ class _HomePAgeState extends State<HomePage> {
               ),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 15),
 
             // side srcoll
 
@@ -119,7 +183,7 @@ class _HomePAgeState extends State<HomePage> {
               ),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
 
             // text
 
@@ -138,7 +202,7 @@ class _HomePAgeState extends State<HomePage> {
               ),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 15),
 
             // bottom cards
 
@@ -158,8 +222,8 @@ class _HomePAgeState extends State<HomePage> {
             ))
           ],
         ),
-        //BottomNav();
       ),
+      // bottomNavigationBar: BottomNav(),
     );
   }
 }
