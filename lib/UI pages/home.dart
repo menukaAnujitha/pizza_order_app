@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_order_app/Models/cart_model.dart';
 import 'package:pizza_order_app/Models/category_card.dart';
 import 'package:pizza_order_app/Models/pizza_card.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -206,19 +208,32 @@ class _HomePAgeState extends State<HomePage> {
             // bottom cards
 
             Expanded(
-                child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                PizzaCard(
-                    pizzaImage: 'lib/images/pizza.jpg',
-                    pizzaName: 'Lorem ipsum dolor slt amet',
-                    pizzaText: 'Lorem ipsum'),
-                PizzaCard(
-                    pizzaImage: 'lib/images/pizza.jpg',
-                    pizzaName: 'Lorem ipsum dolor slt amet',
-                    pizzaText: 'Lorem ipsum'),
-              ],
-            ))
+              child: Consumer<CartModel>(
+                builder: (context, value, child) {
+                  return GridView.builder(
+                    padding: const EdgeInsets.all(5),
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 2,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1 / 1.2,
+                    ),
+                    itemBuilder: (context, index) {
+                      return PizzaCard(
+                        pizzaImage: value.shopItems[index][0],
+                        pizzaName: value.shopItems[index][1],
+                        pizzaText: value.shopItems[index][2],
+                        itemPrice: value.shopItems[index][3],
+                        onPressed: () =>
+                            Provider.of<CartModel>(context, listen: false)
+                                .addItemToCart(index),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

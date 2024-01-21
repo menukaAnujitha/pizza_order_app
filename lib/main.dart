@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_order_app/Models/cart_model.dart';
+import 'package:pizza_order_app/UI%20pages/home.dart';
+import 'package:provider/provider.dart';
 import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 void main() {
@@ -10,10 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pizza Order App',
-      debugShowCheckedModeBanner: false,
-      home: BottomNav(),
+    return ChangeNotifierProvider(
+      create: (context) => CartModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: BottomNav(),
+      ),
     );
   }
 }

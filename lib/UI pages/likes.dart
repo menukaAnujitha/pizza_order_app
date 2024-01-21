@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:pizza_order_app/Models/cart_model.dart';
 import 'package:pizza_order_app/Models/pizza_card.dart';
+import 'package:provider/provider.dart';
 
 class LikesPage extends StatefulWidget {
   const LikesPage({super.key});
@@ -15,29 +17,11 @@ class _LikesPageState extends State<LikesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 17, 20, 37),
-        body: Stack(
+        body: SafeArea(
+            // Top Row
+
+            child: Column(
           children: [
-            // Background image
-            Image.asset(
-              'lib/images/pizza.jpg',
-              fit: BoxFit.cover,
-              height: 200,
-              width: double.infinity,
-              alignment: Alignment.center,
-            ),
-
-            // Blur effect using BackdropFilter
-            Container(
-              color:
-                  Colors.black.withOpacity(0.5), // Adjust the opacity as needed
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 8.0),
-                child: Container(
-                  color: Colors.transparent,
-                ),
-              ),
-            ),
-
             Column(
               children: [
                 Padding(
@@ -72,10 +56,9 @@ class _LikesPageState extends State<LikesPage> {
                 ),
               ],
             ),
-
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 160.0, horizontal: 110),
+                  const EdgeInsets.symmetric(vertical: 50.0, horizontal: 110),
               child: Text(
                 '   Lorem Ipsum \n  Dolor Sit Amet',
                 style: TextStyle(
@@ -85,7 +68,36 @@ class _LikesPageState extends State<LikesPage> {
                 ),
               ),
             ),
+
+// recent orders -> show last 3
+            Expanded(
+              child: Consumer<CartModel>(
+                builder: (context, value, child) {
+                  return GridView.builder(
+                    padding: const EdgeInsets.all(12),
+                    // physics: const NeverScrollableScrollPhysics(),
+                    itemCount: value.shopItems.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 1 / 1.2,
+                    ),
+                    itemBuilder: (context, index) {
+                      return PizzaCard(
+                        pizzaImage: value.shopItems[index][0],
+                        pizzaName: value.shopItems[index][1],
+                        pizzaText: value.shopItems[index][2],
+                        itemPrice: value.shopItems[index][3],
+                        onPressed: () =>
+                            Provider.of<CartModel>(context, listen: false)
+                                .addItemToCart(index),
+                      );
+                    },
+                  );
+                },
+              ),
+            )
           ],
-        ));
+        )));
   }
 }
