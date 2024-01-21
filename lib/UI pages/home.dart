@@ -121,7 +121,7 @@ class _HomePAgeState extends State<HomePage> {
                                   ),
                                 ),
                                 Text(
-                                  '15.',
+                                  '\$15.',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color: Colors.white,
