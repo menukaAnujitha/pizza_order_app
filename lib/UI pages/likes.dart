@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:pizza_order_app/Models/pizza_card.dart';
 
 class LikesPage extends StatefulWidget {
   const LikesPage({super.key});
@@ -11,9 +14,78 @@ class _LikesPageState extends State<LikesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Text('Likes Page', style: TextStyle(fontSize: 30)),
-      ),
-    );
+        backgroundColor: Color.fromARGB(255, 17, 20, 37),
+        body: Stack(
+          children: [
+            // Background image
+            Image.asset(
+              'lib/images/pizza.jpg',
+              fit: BoxFit.cover,
+              height: 200,
+              width: double.infinity,
+              alignment: Alignment.center,
+            ),
+
+            // Blur effect using BackdropFilter
+            Container(
+              color:
+                  Colors.black.withOpacity(0.5), // Adjust the opacity as needed
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 8.0),
+                child: Container(
+                  color: Colors.transparent,
+                ),
+              ),
+            ),
+
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 30.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        color: Color.fromARGB(255, 33, 41, 64),
+                        child: IconButton(
+                            iconSize: 30,
+                            color: Colors.white,
+                            icon: const Icon(
+                              Icons.arrow_back_ios_new,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {}),
+                      ),
+                      SizedBox(width: 245),
+                      Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.asset(
+                            'lib/images/profile.jpg',
+                            width: 40,
+                            height: 40,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 160.0, horizontal: 110),
+              child: Text(
+                '   Lorem Ipsum \n  Dolor Sit Amet',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 }
