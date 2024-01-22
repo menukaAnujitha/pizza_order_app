@@ -39,6 +39,7 @@ dependencies:
   provider:
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
+  shadow_overlay: ^1.0.5
 
 dev_dependencies:
   flutter_test:

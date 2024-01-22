@@ -84,7 +84,28 @@ class PizzaCard extends StatelessWidget {
                   size: 15.0,
                   color: Color.fromRGBO(255, 180, 30, 1),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 14),
+
+                // button
+                Container(
+                  height: 24.0,
+                  width: 70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      gradient: LinearGradient(
+                          colors: [Colors.deepOrange, Colors.pink])),
+                  child: MaterialButton(
+                    onPressed: onPressed,
+                    child: Text(
+                      '\$' + itemPrice,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  /*
                 MaterialButton(
                   onPressed: onPressed,
                   height: 15,
@@ -97,6 +118,7 @@ class PizzaCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                )*/
                 )
               ],
             ),

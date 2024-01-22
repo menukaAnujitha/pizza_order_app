@@ -1,12 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pizza_order_app/Models/cart_model.dart';
-import 'package:pizza_order_app/UI%20pages/home.dart';
 import 'package:pizza_order_app/auth_pages/firebase_options.dart';
 import 'package:pizza_order_app/auth_pages/main_page.dart';
-import 'package:pizza_order_app/intro_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
