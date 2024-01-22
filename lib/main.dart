@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_order_app/Models/cart_model.dart';
 import 'package:pizza_order_app/UI%20pages/home.dart';
+import 'package:pizza_order_app/intro_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:pizza_order_app/Widgets/bottom_nav.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       create: (context) => CartModel(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: BottomNav(),
+        home: IntroScreen(),
       ),
     );
   }

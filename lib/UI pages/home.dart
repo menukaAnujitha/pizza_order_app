@@ -211,8 +211,9 @@ class _HomePAgeState extends State<HomePage> {
               child: Consumer<CartModel>(
                 builder: (context, value, child) {
                   return GridView.builder(
+                    scrollDirection: Axis.vertical,
                     padding: const EdgeInsets.all(5),
-                    physics: const NeverScrollableScrollPhysics(),
+                    //physics: const NeverScrollableScrollPhysics(),
                     itemCount: 2,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
