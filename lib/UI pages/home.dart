@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pizza_order_app/Models/cart_model.dart';
 import 'package:pizza_order_app/Models/category_card.dart';
@@ -12,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePAgeState extends State<HomePage> {
+  final TextEditingController textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +41,15 @@ class _HomePAgeState extends State<HomePage> {
                         onPressed: () {}),
                   ),
                   SizedBox(width: 165),
-                  Text(
-                    'Hello, User!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      //fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      textStyle: const TextStyle(fontSize: 15),
                     ),
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                    },
+                    child: const Text('Sign Out'),
                   ),
                   SizedBox(width: 10),
                   Container(

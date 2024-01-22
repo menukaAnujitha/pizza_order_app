@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pizza_order_app/Widgets/bottom_nav.dart';
+
+import 'package:pizza_order_app/auth_pages/login_page.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -63,7 +64,9 @@ class IntroScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return BottomNav();
+                    return LoginPage(
+                      showRegisterPage: () {},
+                    );
                   },
                 ),
               ),
