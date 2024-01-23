@@ -83,12 +83,10 @@ class _HomePAgeState extends State<HomePage> {
                       Container(
                         height: 180,
                         width: 150,
-                        child: Image.asset(
-                          'lib/images/pizza.jpg',
-                        ),
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
-                              image: AssetImage("lib/images/pizza.jpg"),
+                              image: AssetImage("lib/images/pizza1.jpg"),
                               fit: BoxFit.cover),
                         ),
                       ),
@@ -184,7 +182,16 @@ class _HomePAgeState extends State<HomePage> {
                 children: [
                   CategoryCard(categoryName: 'Breakfast'),
                   CategoryCard(categoryName: 'Lunch'),
-                  CategoryCard(categoryName: 'Dinner')
+                  CategoryCard(categoryName: 'Dinner'),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Container(
+                    child: Icon(
+                      Icons.chevron_right,
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -104,21 +104,6 @@ class PizzaCard extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  /*
-                MaterialButton(
-                  onPressed: onPressed,
-                  height: 15,
-                  minWidth: 5,
-                  color: Color.fromARGB(255, 255, 24, 178),
-                  child: Text(
-                    '\$' + itemPrice,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )*/
                 )
               ],
             ),

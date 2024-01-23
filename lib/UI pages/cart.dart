@@ -16,14 +16,14 @@ class CartPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.all(40),
+                padding: EdgeInsets.all(50),
                 child: Center(
                   child: Text(
-                    "My Cart",
-                    style: GoogleFonts.notoSerif(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                    'My Cart',
+                    style: TextStyle(
                       color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
                     ),
                   ),
                 ),

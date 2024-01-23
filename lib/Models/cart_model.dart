@@ -4,13 +4,13 @@ class CartModel extends ChangeNotifier {
   // list of items on sale
   final List _shopItems = const [
     [
-      "lib/images/pizza.jpg",
+      "lib/images/pizza8.jpg",
       "first pizza",
       "Lorem ipsum Dolor ",
       "12.50",
     ],
     [
-      "lib/images/pizza.jpg",
+      "lib/images/pizza5.jpg",
       "second pizza",
       "Lorem ipsum Dolor ",
       "15.50",
@@ -22,7 +22,7 @@ class CartModel extends ChangeNotifier {
       "20.50",
     ],
     [
-      "lib/images/pizza.jpg",
+      "lib/images/pizza4.jpg",
       "fourth pizza",
       "Lorem ipsum Dolor ",
       "10.50",

@@ -21,7 +21,6 @@ class _LikesPageState extends State<LikesPage> {
         child: Column(
           children: [
             Stack(
-              // alignment: AlignmentDirectional.center,
               children: [
                 Container(
                   height: 200,
@@ -30,7 +29,7 @@ class _LikesPageState extends State<LikesPage> {
                     child: AspectRatio(
                       aspectRatio: 16 / 8,
                       child: Image.asset(
-                        'lib/images/pizza.jpg',
+                        'lib/images/pizza3.jpg',
                         fit: BoxFit.cover,
                       ),
                     ),
